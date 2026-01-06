@@ -1,0 +1,22 @@
+$nav-links:'.nav-links';
+$nav-link:'.nav-link';
+
+#{$nav-links} {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    #{$nav-link} {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+$header-nav:'.header-nav';
+
+#{$header-nav} {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+}

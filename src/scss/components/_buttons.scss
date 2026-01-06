@@ -1,0 +1,37 @@
+.btn {
+    background: #ffd814;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+    padding: 0 1.5rem;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    height: 2.875rem;
+    line-height: 2.875rem;
+    font-weight: 500;
+    transition: .3s all ease-in-out;
+    white-space: nowrap;
+    border: none;
+    border-radius: 3rem;
+}
+
+.btn--equal {
+    padding: 0 !important;
+    width: 2.86rem;
+    height: 2.86rem;
+    line-height: 100%;
+    min-width: 2.86rem;
+    min-height: 1px;
+
+    svg {
+        vertical-align: text-top;
+        margin: 0 !important;
+    }
+}
+
+.btn--transparent {
+    background-color: transparent;
+}
