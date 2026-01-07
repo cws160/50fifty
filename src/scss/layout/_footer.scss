@@ -21,6 +21,10 @@ $footer:'.footer';
     &-main {
         padding: 2.5rem 0;
 
+        @media (max-width:1199px) {
+            padding: 2rem;
+        }
+
         .container {
             max-width: 1000px;
         }
@@ -29,6 +33,10 @@ $footer:'.footer';
     &-bottom {
         border-top: 1px solid #3a4553;
         padding: 2.5rem 0;
+
+        @media (max-width:1199px) {
+            padding: 2rem;
+        }
 
         .btn {
             height: 2.5rem;

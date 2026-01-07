@@ -5,8 +5,13 @@ $nav-link:'.nav-link';
     display: flex;
     align-items: center;
     gap: 1rem;
+    overflow: auto;
+    padding: 1rem;
+    padding-top: 0;
 
     #{$nav-link} {
+        white-space: nowrap;
+
         &:hover {
             text-decoration: underline;
         }
@@ -16,7 +21,7 @@ $nav-link:'.nav-link';
 $header-nav:'.header-nav';
 
 #{$header-nav} {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 1.5rem;
 }

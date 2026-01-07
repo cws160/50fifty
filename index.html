@@ -20,19 +20,21 @@
 <body>
   <header id="header" class="header">
     <div class="header-main">
+      <a href="javascript:void(0)" class="btn-hamburger hamburger-js xl:hidden">
+        <span></span>
+      </a>
       <div class="header-logo">
         <a href="#" class="logo">
-          <img src="/assets/images/logo.svg" alt="logo" width="" height="">
+          <img src="assets/images/logo.svg" alt="logo" width="" height="">
         </a>
       </div>
-      <div class="header-location">
+      <div class="header-location hidden md:block">
         <a class="context-selector" href="javascript:void(0);">
           <span class="context-selector__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M12 0C7.11133 0 3.13428 3.97705 3.13428 8.86571C3.13428 10.4751 3.85605 12.206 3.8863 12.279C4.11941 12.8323 4.57939 13.6918 4.91107 14.1956L10.9898 23.406C11.2386 23.7836 11.6068 24 12 24C12.3932 24 12.7614 23.7836 13.0102 23.4065L19.0894 14.1956C19.4216 13.6918 19.8811 12.8323 20.1142 12.279C20.1444 12.2065 20.8657 10.4756 20.8657 8.86571C20.8657 3.97705 16.8886 0 12 0ZM19.1525 11.8743C18.9444 12.3703 18.5163 13.1698 18.2185 13.6214L12.1392 22.8323C12.0193 23.0143 11.9812 23.0143 11.8613 22.8323L5.782 13.6214C5.48421 13.1698 5.05605 12.3698 4.84797 11.8738C4.8391 11.8524 4.1773 10.2592 4.1773 8.86571C4.1773 4.55228 7.68656 1.04302 12 1.04302C16.3134 1.04302 19.8227 4.55228 19.8227 8.86571C19.8227 10.2613 19.1593 11.8587 19.1525 11.8743Z" />
-              <path
-                d="M12 4.17261C9.41171 4.17261 7.30637 6.27847 7.30637 8.86622C7.30637 11.454 9.41171 13.5598 12 13.5598C14.5882 13.5598 16.6936 11.454 16.6936 8.86622C16.6936 6.27847 14.5882 4.17261 12 4.17261ZM12 12.5168C9.98746 12.5168 8.34939 10.8793 8.34939 8.86622C8.34939 6.85318 9.98746 5.21563 12 5.21563C14.0125 5.21563 15.6506 6.85318 15.6506 8.86622C15.6506 10.8793 14.0125 12.5168 12 12.5168Z" />
+                d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+                fill="currentColor" />
             </svg>
           </span>
           <span class="context-selector__content">
@@ -65,7 +67,7 @@
         <div class="header-language">
           <a href="javascript:void(0);" class="language-filter">
             <span class="language-filter-media">
-              <img src="/assets/images/flags/us.png" alt="">
+              <img src="assets/images/flags/us.png" alt="">
             </span>
             <span class="language-filter-value">EN</span>
           </a>
@@ -73,9 +75,16 @@
         </div>
         <div class="header-account">
           <a class="context-selector" href="javascript:void(0);">
+            <span class="context-selector__media xl:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
+                </path>
+              </svg>
+            </span>
             <span class="context-selector__content">
               <span class="context-selector__label">Hello, sign in</span>
-              <span class="context-selector__value">Account & Lists</span>
+              <span class="context-selector__value !hidden xl:!block">Account & Lists</span>
             </span>
           </a>
         </div>
@@ -96,7 +105,7 @@
               </svg>
               <span class="header-cart-value">2</span>
             </span>
-            <span class="context-selector__content">
+            <span class="context-selector__content hidden md:block">
               <span class="context-selector__value">Cart</span>
             </span>
           </a>
@@ -105,7 +114,7 @@
     </div>
     <div class="header-bottom">
       <div class="header-nav">
-        <a href="javascript:void(0)" class="btn-hamburger hamburger-js">
+        <a href="javascript:void(0)" class="btn-hamburger hamburger-js hidden xl:block">
           <span></span>
         </a>
         <ul class="nav-links">
@@ -118,23 +127,66 @@
         </ul>
       </div>
     </div>
+    <div class="header-location-mobile md:hidden p-4" data-label="show only for mobile view">
+      <a class="context-selector" href="javascript:void(0);">
+        <span class="context-selector__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+              fill="currentColor" />
+          </svg>
+        </span>
+        <span class="context-selector__content">
+          <span class="context-selector__value">Hillsboro 97124</span>
+        </span>
+      </a>
+    </div>
   </header>
   <main class="main" id="main">
     <div class="main-inner">
-      <section class="section">
+      <section class="md:hidden py-4" data-label="show only for mobile view">
+        <div class="collection-slides">
+          <div class="slide-item">
+            <a href="#">
+              <img src="assets/images/slide-1.jpg" alt="">
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="#">
+              <img src="assets/images/slide-2.jpg" alt="">
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="#">
+              <img src="assets/images/slide-3.jpg" alt="">
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="#">
+              <img src="assets/images/slide-4.jpg" alt="">
+            </a>
+          </div>
+          <div class="slide-item">
+            <a href="#">
+              <img src="assets/images/slide-5.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section hidden md:block">
         <div class="section-hero">
           <div class="hero js--hero-slider">
             <div class="hero-item">
-              <a href="#"><img src="/assets/images/hero-banner-img-1.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/hero-banner-img-1.jpg" alt=""></a>
             </div>
             <div class="hero-item">
-              <a href="#"><img src="/assets/images/hero-banner-img-2.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/hero-banner-img-2.jpg" alt=""></a>
             </div>
             <div class="hero-item">
-              <a href="#"><img src="/assets/images/hero-banner-img-3.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/hero-banner-img-3.jpg" alt=""></a>
             </div>
             <div class="hero-item">
-              <a href="#"><img src="/assets/images/hero-banner-img-4.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/hero-banner-img-4.jpg" alt=""></a>
             </div>
           </div>
         </div>
@@ -151,7 +203,7 @@
                   <div class="d-grid" data-view="1">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/1.jpg" alt="">
+                        <img src="assets/images/1.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Jeans under $50</span>
                     </a>
@@ -171,25 +223,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/2.jpg" alt="">
+                        <img src="assets/images/2.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Jeans under $50</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/3.jpg" alt="">
+                        <img src="assets/images/3.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Tops under $25</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/4.jpg" alt="">
+                        <img src="assets/images/4.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Dresses under $30</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/5.jpg" alt="">
+                        <img src="assets/images/5.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Shoes under $50</span>
                     </a>
@@ -209,25 +261,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/6.jpg" alt="">
+                        <img src="assets/images/6.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Kitchen & Dining</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/7.jpg" alt="">
+                        <img src="assets/images/7.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Home Improvement</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/8.jpg" alt="">
+                        <img src="assets/images/8.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Décor</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/9.jpg" alt="">
+                        <img src="assets/images/9.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Bedding & Bath</span>
                     </a>
@@ -247,25 +299,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/10.jpg" alt="">
+                        <img src="assets/images/10.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Cleaning Tools</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/11.jpg" alt="">
+                        <img src="assets/images/11.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Home Storage</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/12.jpg" alt="">
+                        <img src="assets/images/12.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Home Decor</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/13.jpg" alt="">
+                        <img src="assets/images/13.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Bedding</span>
                     </a>
@@ -289,7 +341,7 @@
                   <div class="d-grid mb-4" data-view="1">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="16/9">
-                        <img src="/assets/images/29.jpg" alt="">
+                        <img src="assets/images/29.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Cooker</span>
                     </a>
@@ -297,19 +349,19 @@
                   <div class="d-grid" data-view="3">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/26.jpg" alt="">
+                        <img src="assets/images/26.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Coffee</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/27.jpg" alt="">
+                        <img src="assets/images/27.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Pots and Pans</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/28.jpg" alt="">
+                        <img src="assets/images/28.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Kettles</span>
                     </a>
@@ -329,25 +381,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/14.jpg" alt="">
+                        <img src="assets/images/14.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Dresses</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/15.jpg" alt="">
+                        <img src="assets/images/15.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Knits</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/16.jpg" alt="">
+                        <img src="assets/images/16.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Jackets</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/17.jpg" alt="">
+                        <img src="assets/images/17.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Jewelry</span>
                     </a>
@@ -367,25 +419,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/18.jpg" alt="">
+                        <img src="assets/images/18.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Dinnerware</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/19.jpg" alt="">
+                        <img src="assets/images/19.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Home décor</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/20.jpg" alt="">
+                        <img src="assets/images/20.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Kitchen</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/21.jpg" alt="">
+                        <img src="assets/images/21.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Storage</span>
                     </a>
@@ -405,25 +457,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/22.jpg" alt="">
+                        <img src="assets/images/22.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Baskets & hampers</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/23.jpg" alt="">
+                        <img src="assets/images/23.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Hardware</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/24.jpg" alt="">
+                        <img src="assets/images/24.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Accent furniture</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media" --ratio="1/1">
-                        <img src="/assets/images/25.jpg" alt="">
+                        <img src="assets/images/25.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Wallpaper & paint</span>
                     </a>
@@ -446,98 +498,98 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-1.jpg" alt="">
+                      <img src="assets/images/product-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-2.jpg" alt="">
+                      <img src="assets/images/product-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-3.jpg" alt="">
+                      <img src="assets/images/product-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-4.jpg" alt="">
+                      <img src="assets/images/product-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-5.jpg" alt="">
+                      <img src="assets/images/product-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-6.jpg" alt="">
+                      <img src="assets/images/product-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-7.jpg" alt="">
+                      <img src="assets/images/product-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-8.jpg" alt="">
+                      <img src="assets/images/product-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-9.jpg" alt="">
+                      <img src="assets/images/product-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-10.jpg" alt="">
+                      <img src="assets/images/product-10.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-1.jpg" alt="">
+                      <img src="assets/images/product-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-2.jpg" alt="">
+                      <img src="assets/images/product-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-3.jpg" alt="">
+                      <img src="assets/images/product-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/product-4.jpg" alt="">
+                      <img src="assets/images/product-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -555,98 +607,98 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-1.jpg" alt="">
+                      <img src="assets/images/cloth-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-2.jpg" alt="">
+                      <img src="assets/images/cloth-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-3.jpg" alt="">
+                      <img src="assets/images/cloth-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-4.jpg" alt="">
+                      <img src="assets/images/cloth-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-5.jpg" alt="">
+                      <img src="assets/images/cloth-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-6.jpg" alt="">
+                      <img src="assets/images/cloth-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-7.jpg" alt="">
+                      <img src="assets/images/cloth-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-8.jpg" alt="">
+                      <img src="assets/images/cloth-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-9.jpg" alt="">
+                      <img src="assets/images/cloth-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-1.jpg" alt="">
+                      <img src="assets/images/cloth-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-2.jpg" alt="">
+                      <img src="assets/images/cloth-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-3.jpg" alt="">
+                      <img src="assets/images/cloth-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-4.jpg" alt="">
+                      <img src="assets/images/cloth-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/cloth-5.jpg" alt="">
+                      <img src="assets/images/cloth-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -665,25 +717,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/30.jpg" alt="">
+                        <img src="assets/images/30.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Outdoor Play Sets</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/31.jpg" alt="">
+                        <img src="assets/images/31.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Learning Toys</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/32.jpg" alt="">
+                        <img src="assets/images/32.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Action Figures</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/33.jpg" alt="">
+                        <img src="assets/images/33.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Pretend Play Toys</span>
                     </a>
@@ -703,25 +755,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/34.jpg" alt="">
+                        <img src="assets/images/34.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Smartphones</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/35.jpg" alt="">
+                        <img src="assets/images/35.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Watches</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/36.jpg" alt="">
+                        <img src="assets/images/36.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Headphones</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/37.jpg" alt="">
+                        <img src="assets/images/37.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Tablets</span>
                     </a>
@@ -741,25 +793,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/38.jpg" alt="">
+                        <img src="assets/images/38.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Clothing</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/39.jpg" alt="">
+                        <img src="assets/images/39.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Trackers</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/40.jpg" alt="">
+                        <img src="assets/images/40.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Equipment</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/41.jpg" alt="">
+                        <img src="assets/images/41.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Deals</span>
                     </a>
@@ -779,25 +831,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/42.jpg" alt="">
+                        <img src="assets/images/42.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Laptops</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/43.jpg" alt="">
+                        <img src="assets/images/43.jpg" alt="">
                       </span>
                       <span class="collection-card__title">PCs</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/44.jpg" alt="">
+                        <img src="assets/images/44.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Hard Drives</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/45.jpg" alt="">
+                        <img src="assets/images/45.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Monitors</span>
                     </a>
@@ -820,98 +872,98 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-1.jpg" alt="">
+                      <img src="assets/images/book-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-2.jpg" alt="">
+                      <img src="assets/images/book-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-3.jpg" alt="">
+                      <img src="assets/images/book-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-4.jpg" alt="">
+                      <img src="assets/images/book-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-5.jpg" alt="">
+                      <img src="assets/images/book-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-6.jpg" alt="">
+                      <img src="assets/images/book-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-7.jpg" alt="">
+                      <img src="assets/images/book-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-8.jpg" alt="">
+                      <img src="assets/images/book-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-9.jpg" alt="">
+                      <img src="assets/images/book-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-1.jpg" alt="">
+                      <img src="assets/images/book-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-2.jpg" alt="">
+                      <img src="assets/images/book-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-3.jpg" alt="">
+                      <img src="assets/images/book-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-4.jpg" alt="">
+                      <img src="assets/images/book-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/book-5.jpg" alt="">
+                      <img src="assets/images/book-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -929,77 +981,77 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-1.jpg" alt="">
+                      <img src="assets/images/top-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-2.jpg" alt="">
+                      <img src="assets/images/top-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-3.jpg" alt="">
+                      <img src="assets/images/top-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-4.jpg" alt="">
+                      <img src="assets/images/top-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-5.jpg" alt="">
+                      <img src="assets/images/top-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-6.jpg" alt="">
+                      <img src="assets/images/top-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-7.jpg" alt="">
+                      <img src="assets/images/top-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-8.jpg" alt="">
+                      <img src="assets/images/top-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-9.jpg" alt="">
+                      <img src="assets/images/top-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-2.jpg" alt="">
+                      <img src="assets/images/top-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/top-3.jpg" alt="">
+                      <img src="assets/images/top-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -1018,25 +1070,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/46.jpg" alt="">
+                        <img src="assets/images/46.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Books</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/47.jpg" alt="">
+                        <img src="assets/images/47.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Fashion</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/48.jpg" alt="">
+                        <img src="assets/images/48.jpg" alt="">
                       </span>
                       <span class="collection-card__title">PC</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/49.jpg" alt="">
+                        <img src="assets/images/49.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Beauty</span>
                     </a>
@@ -1056,25 +1108,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/50.jpg" alt="">
+                        <img src="assets/images/50.jpg" alt="">
                       </span>
                       <span class="collection-card__title">PC gaming</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/51.jpg" alt="">
+                        <img src="assets/images/51.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Xbox</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/52.jpg" alt="">
+                        <img src="assets/images/52.jpg" alt="">
                       </span>
                       <span class="collection-card__title">PlayStation</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/53.jpg" alt="">
+                        <img src="assets/images/53.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Nintendo Switch</span>
                     </a>
@@ -1094,25 +1146,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/54.jpg" alt="">
+                        <img src="assets/images/54.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Apparel</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/55.jpg" alt="">
+                        <img src="assets/images/55.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Hats</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/56.jpg" alt="">
+                        <img src="assets/images/56.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Action figures</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/57.jpg" alt="">
+                        <img src="assets/images/57.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Mugs</span>
                     </a>
@@ -1132,25 +1184,25 @@
                   <div class="d-grid" data-view="2">
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/58.jpg" alt="">
+                        <img src="assets/images/58.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Makeup</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/59.jpg" alt="">
+                        <img src="assets/images/59.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Brushes</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/60.jpg" alt="">
+                        <img src="assets/images/60.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Sponges</span>
                     </a>
                     <a class="collection-card" href="#">
                       <span class="collection-card__media">
-                        <img src="/assets/images/61.jpg" alt="">
+                        <img src="assets/images/61.jpg" alt="">
                       </span>
                       <span class="collection-card__title">Mirrors</span>
                     </a>
@@ -1173,77 +1225,77 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-1.jpg" alt="">
+                      <img src="assets/images/beauty-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-2.jpg" alt="">
+                      <img src="assets/images/beauty-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-3.jpg" alt="">
+                      <img src="assets/images/beauty-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-4.jpg" alt="">
+                      <img src="assets/images/beauty-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-5.jpg" alt="">
+                      <img src="assets/images/beauty-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-6.jpg" alt="">
+                      <img src="assets/images/beauty-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-7.jpg" alt="">
+                      <img src="assets/images/beauty-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-8.jpg" alt="">
+                      <img src="assets/images/beauty-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-9.jpg" alt="">
+                      <img src="assets/images/beauty-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-10.jpg" alt="">
+                      <img src="assets/images/beauty-10.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/beauty-11.jpg" alt="">
+                      <img src="assets/images/beauty-11.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -1261,77 +1313,77 @@
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-1.jpg" alt="">
+                      <img src="assets/images/popular-1.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-2.jpg" alt="">
+                      <img src="assets/images/popular-2.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-3.jpg" alt="">
+                      <img src="assets/images/popular-3.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-4.jpg" alt="">
+                      <img src="assets/images/popular-4.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-5.jpg" alt="">
+                      <img src="assets/images/popular-5.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-6.jpg" alt="">
+                      <img src="assets/images/popular-6.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-7.jpg" alt="">
+                      <img src="assets/images/popular-7.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-8.jpg" alt="">
+                      <img src="assets/images/popular-8.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-9.jpg" alt="">
+                      <img src="assets/images/popular-9.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-10.jpg" alt="">
+                      <img src="assets/images/popular-10.jpg" alt="">
                     </span>
                   </a>
                 </div>
                 <div class="feed-carousel-item">
                   <a class="collection-card" href="#">
                     <span class="collection-card__media">
-                      <img src="/assets/images/popular-11.jpg" alt="">
+                      <img src="assets/images/popular-11.jpg" alt="">
                     </span>
                   </a>
                 </div>
@@ -1360,8 +1412,8 @@
     </div>
     <div class="footer-main">
       <div class="container mx-auto">
-        <div class="flex">
-          <div class="md:w-3/12">
+        <div class="flex flex-wrap xl:flex-nowrap gap-6 md:gap-4">
+          <div class="w-full sm:w-6/12 md:w-3/12">
             <div class="footer-meta">
               <div class="footer-meta__head">
                 <h5>Get to Know Us</h5>
@@ -1380,7 +1432,7 @@
               </div>
             </div>
           </div>
-          <div class="md:w-3/12">
+          <div class="w-full sm:w-6/12 md:w-3/12">
             <div class="footer-meta">
               <div class="footer-meta__head">
                 <h5>Make Money with Us</h5>
@@ -1401,7 +1453,7 @@
               </div>
             </div>
           </div>
-          <div class="md:w-4/12">
+          <div class="w-full sm:w-6/12 md:w-3/12">
             <div class="footer-meta">
               <div class="footer-meta__head">
                 <h5>Amazon Payment Products</h5>
@@ -1418,7 +1470,7 @@
               </div>
             </div>
           </div>
-          <div class="md:w-2/12">
+          <div class="w-full sm:w-6/12 md:w-3/12">
             <div class="footer-meta">
               <div class="footer-meta__head">
                 <h5>Let Us Help You</h5>
@@ -1443,11 +1495,11 @@
     </div>
     <div class="footer-bottom">
       <div class="container mx-auto max-w-[1000px]">
-        <div class="flex items-center justify-center gap-10">
+        <div class="flex items-center justify-center gap-4 md:-gap-10 flex-wrap">
           <div class="footer-logo">
-            <a href="#"><img src="/assets/images/logo.svg" alt=""></a>
+            <a href="#"><img src="assets/images/logo.svg" alt=""></a>
           </div>
-          <ul class="footer-tools flex items-center gap-3">
+          <ul class="footer-tools flex flex-wrap items-center justify-center gap-3">
             <li>
               <a href="#" class="btn btn--lang-update">
                 <span class="icon">
@@ -1470,7 +1522,7 @@
             <li>
               <a href="#" class="btn">
                 <span class="flag-media">
-                  <img src="/assets/images/flags/us.png" alt="">
+                  <img src="assets/images/flags/us.png" alt="">
                 </span>
                 <span>United States</span>
               </a>

@@ -138,3 +138,15 @@ $hero:'.hero';
         }
     }
 }
+
+.collection-slides {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+    padding: 0 1rem;
+
+    .slide-item {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
