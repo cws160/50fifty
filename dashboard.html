@@ -189,12 +189,18 @@
     <main class="flex-1 flex flex-col h-full relative overflow-hidden bg-[#F8FAFC]">
         <!-- Header -->
         <header id="header"
-            class="xl:h-16 xl:py-0 py-4 bg-white border-b border-gray-200 flex flex-xl-row flex-col items-center justify-between px-6 md:px-8 z-10 flex-shrink-0 gap-3">
+            class="xl:h-16 xl:py-0 py-4 bg-white border-b border-gray-200 flex xl:flex-row flex-col xl:items-center justify-between px-6 md:px-8 z-10 flex-shrink-0 gap-3">
 
             <!-- Right: Actions -->
-            <div class="flex items-center gap-4 xl:order-2">
+            <div class="flex items-center gap-4 xl:order-2 flex-1">
                 <!-- Search (Hidden on small mobile) -->
-                <div class="hidden md:flex items-center bg-gray-50 rounded-full px-3 py-2 border border-gray-200 w-64">
+                <button class="md:hidden text-black hover:text-red-600 mr-auto">
+                    <span class="btn-hamburger hamburger-js block">
+                        <span></span>
+                    </span>
+                </button>
+                <div
+                    class="hidden md:flex items-center bg-gray-50 rounded-full px-3 py-2 border border-gray-200 w-full xl:-w-64">
                     <i class="svg-icon svg-icon--xs text-gray-400 mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path
@@ -207,7 +213,7 @@
                 </div>
                 <!-- Notifications -->
                 <button
-                    class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-50 text-gray-500 transition-colors">
+                    class="relative w-10 h-10 max-w-10 flex-none flex items-center justify-center rounded-full hover:bg-gray-50 text-gray-500 transition-colors">
                     <i class="svg-icon svg-icon--sm">
                         <svg cxmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
@@ -215,7 +221,7 @@
                             </path>
                         </svg>
                     </i>
-                    <span class="absolute top-2 right-2 w-2 h-2 bg-brand-red rounded-full border-2 border-white"></span>
+                    <span class="absolute top-1 right-1 w-3 h-3 bg-red-600 rounded-full border-2 border-white"></span>
                 </button>
                 <!-- Primary Action -->
                 <button
@@ -231,15 +237,10 @@
                 </button>
             </div>
             <!-- Left: Mobile Menu & Title/Counter -->
-            <div class="flex items-center gap-4 xl:order-1">
-                <button class="md:hidden text-black hover:text-red-600">
-                    <span class="btn-hamburger hamburger-js block">
-                        <span></span>
-                    </span>
-                </button>
-                <div class="flex items-center gap-3">
+            <div class="flex items-center gap-4 xl:order-1 flex-1">
+                <div class="flex items-center gap-3 flex-1 xl:flex-none">
                     <div
-                        class="bg-red-50 text-brand-red px-4 py-2 rounded-full flex items-center gap-2 border border-red-100">
+                        class="bg-red-50 text-brand-red px-4 py-2 rounded-full flex justify-center items-center gap-2 border border-red-100 w-full xl:w-auto">
                         <i class="svg-icon svg-icon--sm">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                 <path
