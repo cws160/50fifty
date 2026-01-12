@@ -1,0 +1,23 @@
+.svg-icon {
+    --size: 24px;
+    height: var(--size);
+    width: var(--size);
+    flex: 0 0 var(--size);
+    max-width: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        display: block;
+        fill: currentColor;
+    }
+
+    &--sm {
+        --size: 18px;
+    }
+
+    &--xs {
+        --size: 14px;
+    }
+}

@@ -1,0 +1,47 @@
+ ::-webkit-scrollbar {
+     width: 6px;
+     height: 6px;
+ }
+
+ ::-webkit-scrollbar-track {
+     background: transparent;
+ }
+
+ ::-webkit-scrollbar-thumb {
+     background: #CBD5E1;
+     border-radius: 3px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+     background: #94A3B8;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background-color: #F8FAFC;
+ }
+
+ .sidebar-link.active {
+     background-color: #FEF2F2;
+     color: #CC0000;
+
+     svg {
+         fill: currentColor;
+     }
+ }
+
+ .sidebar-link:hover:not(.active) {
+     background-color: #F3F4F6;
+     color: #111111;
+ }
+
+ select {
+     appearance: none;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     background-position: right 12px center;
+     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj48cGF0aCBkPSJNMTEuOTk5OSAxMy4xNzE0TDE2Ljk0OTcgOC4yMjE2OEwxOC4zNjM5IDkuNjM1ODlMMTEuOTk5OSAxNS45OTk5TDUuNjM1OTkgOS42MzU4OUw3LjA1MDIgOC4yMjE2OEwxMS45OTk5IDEzLjE3MTRaIj48L3BhdGg+PC9zdmc+);
+     background-repeat: no-repeat;
+     background-size: 20px;
+     padding-inline-end: 2.25rem !important;
+ }

@@ -6,8 +6,11 @@ $nav-link:'.nav-link';
     align-items: center;
     gap: 1rem;
     overflow: auto;
-    padding: 1rem;
-    padding-top: 0;
+
+    @media (max-width:1199px) {
+        padding: 1rem;
+        padding-top: 0;
+    }
 
     #{$nav-link} {
         white-space: nowrap;
