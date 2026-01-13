@@ -42,9 +42,9 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-        class="w-64 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col h-full transition-all duration-300 z-20 hidden md:flex">
+        class="fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200 flex flex-col h-full z-40 transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 md:flex">
         <!-- Logo Area -->
-        <div class="h-16 flex items-center px-6 border-b border-gray-100">
+        <div class="h-16 flex items-center px-6 border-b border-gray-100 justify-between">
             <a class="flex items-center gap-2 text-brand-black font-bold text-xl" href="#">
                 <svg width="138" height="24" viewBox="0 0 138 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_6_30)">
@@ -62,6 +62,9 @@
                     </defs>
                 </svg>
             </a>
+            <button class="md:hidden" onclick="closeSidebar()">
+                ✕
+            </button>
         </div>
         <!-- Navigation -->
         <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1">
@@ -184,6 +187,7 @@
             </div>
         </div>
     </aside>
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/40 z-30 hidden md:hidden"></div>
 
     <!-- Main Content -->
     <main class="flex-1 flex flex-col h-full relative overflow-hidden bg-[#F8FAFC]">
@@ -194,7 +198,7 @@
             <!-- Right: Actions -->
             <div class="flex items-center gap-4 xl:order-2 flex-1">
                 <!-- Search (Hidden on small mobile) -->
-                <button class="md:hidden text-black hover:text-red-600 mr-auto">
+                <button id="sidebarToggle" class="md:hidden text-black hover:text-red-600 mr-auto">
                     <span class="btn-hamburger hamburger-js block">
                         <span></span>
                     </span>
@@ -363,7 +367,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                     <!-- Chart Section -->
-                    <div class="lg:col-span-2 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="lg:col-span-2 bg-white p-4 md:p-6 rounded-xl border border-gray-100 shadow-sm">
                         <div class="flex justify-between items-center mb-6">
                             <h3 class="text-lg font-semibold text-gray-900">Entrant Growth</h3>
                             <button class="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm
@@ -377,7 +381,7 @@
                     <!-- Right Column: Quick Actions & Top Merch -->
                     <div class="space-y-6">
                         <!-- Quick Actions -->
-                        <div class="bg-black text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                        <div class="bg-black text-white p-4 md:p-6 rounded-xl shadow-lg relative overflow-hidden">
                             <div class="relative z-10">
                                 <h3 class="text-lg font-semibold mb-2">Promote Your Sweepstakes</h3>
                                 <p class="text-gray-300 text-sm mb-4">Boost your visibility by sharing your unique QR
@@ -390,7 +394,7 @@
                         </div>
 
                         <!-- Top Merch List -->
-                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex-1">
+                        <div class="bg-white p-4 md:p-6 rounded-xl border border-gray-100 shadow-sm flex-1">
                             <h3 class="text-lg font-semibold text-gray-900 mb-4">Top Performing Merch</h3>
                             <div class="space-y-4">
                                 <div class="flex items-center gap-3">
@@ -440,7 +444,7 @@
                 <!-- Recent Entrants Table -->
                 <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
-                        class="p-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        class="p-4 md:p-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <h3 class="text-lg font-semibold text-gray-900">Recent Entrants</h3>
                         <div class="flex gap-2">
                             <div class="relative">
@@ -471,100 +475,120 @@
                         <table class="w-full text-left border-collapse">
                             <thead>
                                 <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
-                                    <th class="px-6 py-4 font-medium">Entrant Name</th>
-                                    <th class="px-6 py-4 font-medium">Email</th>
-                                    <th class="px-6 py-4 font-medium">Date</th>
-                                    <th class="px-6 py-4 font-medium">Status</th>
-                                    <th class="px-6 py-4 font-medium text-right">Action</th>
+                                    <th class="px-4 md:px-6 py-4 font-semibold">Entrant Name</th>
+                                    <th class="px-4 md:px-6 py-4 font-semibold">Email</th>
+                                    <th class="px-4 md:px-6 py-4 font-semibold">Date</th>
+                                    <th class="px-4 md:px-6 py-4 font-semibold">Status</th>
+                                    <th class="px-4 md:px-6 py-4 font-semibold text-right">Action</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-100 text-sm">
+                            <tbody class="divide-y divide-gray-100 text-xs">
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
-                                        <img src="assets/images/avatar-3.jpg" class="w-8 h-8 rounded-full">
-                                        Michael Foster
+                                    <td class="px-4 md:px-6 py-4 font-medium text-gray-900">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-full overflow-hidden">
+                                                <img src="assets/images/avatar-3.jpg">
+                                            </span>
+                                            <span>Michael Foster</span>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-600">michael.f@example.com</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 24, 2024</td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">michael.f@example.com</td>
+                                    <td class="px-4 md:px-6 py-4 text-gray-600 text-nowrap">Oct 24, 2024</td>
+                                    <td class="px-4 md:px-6 py-4">
                                         <span
                                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                                             Verified
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 text-right">
+                                    <td class="px-4 md:px-6 py-4 text-right">
                                         <button class="text-gray-400 hover:text-brand-black"><i
                                                 class="fa-regular fa-ellipsis-vertical"></i></button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
-                                        <img src="assets/images/avatar-6.jpg" class="w-8 h-8 rounded-full">
-                                        Sarah Jenkins
+                                    <td class="px-4 md:px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-full overflow-hidden">
+                                                <img src="assets/images/avatar-6.jpg">
+                                            </span>
+                                            <span>Sarah Jenkins</span>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-600">sarah.j@example.com</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 24, 2024</td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">sarah.j@example.com</td>
+                                    <td class="px-4 md:px-6 py-4 text-gray-600 text-nowrap">Oct 24, 2024</td>
+                                    <td class="px-4 md:px-6 py-4">
                                         <span
                                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                                             Verified
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 text-right">
+                                    <td class="px-4 md:px-6 py-4 text-right">
                                         <button class="text-gray-400 hover:text-brand-black"><i
                                                 class="fa-regular fa-ellipsis-vertical"></i></button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
-                                        <img src="assets/images/avatar-8.jpg" class="w-8 h-8 rounded-full">
-                                        David Chen
+                                    <td class="px-4 md:px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-full overflow-hidden">
+                                                <img src="assets/images/avatar-8.jpg">
+                                            </span>
+                                            <span>David Chen</span>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-600">david.chen@example.com</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 23, 2024</td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">david.chen@example.com</td>
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">Oct 23, 2024</td>
+                                    <td class="px-4 md:px-6 py-4">
                                         <span
                                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
                                             Pending
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 text-right">
+                                    <td class="px-4 md:px-6 py-4 text-right">
                                         <button class="text-gray-400 hover:text-brand-black"><i
                                                 class="fa-regular fa-ellipsis-vertical"></i></button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
-                                        <img src="assets/images/avatar-1.jpg" class="w-8 h-8 rounded-full">
-                                        Emma Wilson
+                                    <td class="px-4 md:px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-full overflow-hidden">
+                                                <img src="assets/images/avatar-1.jpg">
+                                            </span>
+                                            <span>Emma Wilson</span>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-600">emma.w@example.com</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 23, 2024</td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">emma.w@example.com</td>
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">Oct 23, 2024</td>
+                                    <td class="px-4 md:px-6 py-4">
                                         <span
                                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                                             Verified
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 text-right">
+                                    <td class="px-4 md:px-6 py-4 text-right">
                                         <button class="text-gray-400 hover:text-brand-black"><i
                                                 class="fa-regular fa-ellipsis-vertical"></i></button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
-                                        <img src="assets/images/avatar-4.jpg" class="w-8 h-8 rounded-full">
-                                        James Rodriguez
+                                    <td class="px-4 md:px-6 py-4 font-medium text-gray-900 flex items-center gap-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-full overflow-hidden">
+                                                <img src="assets/images/avatar-4.jpg">
+                                            </span>
+                                            <span>James Rodriguez</span>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 text-gray-600">james.r@example.com</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 22, 2024</td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 md:px-6 py-4 text-gray-600">james.r@example.com</td>
+                                    <td class="px-4 md:px-6 py-4 text-gray-600 text-nowrap">Oct 22, 2024</td>
+                                    <td class="px-4 md:px-6 py-4">
                                         <span
                                             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                                             Verified
                                         </span>
                                     </td>
-                                    <td class="px-6 py-4 text-right">
+                                    <td class="px-4 md:px-6 py-4 text-right">
                                         <button class="text-gray-400 hover:text-brand-black"><i
                                                 class="fa-regular fa-ellipsis-vertical"></i></button>
                                     </td>
@@ -572,7 +596,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
+                    <div class="px-4 md:px-6 py-4 border-t border-gray-100 flex items-center justify-between">
                         <p class="text-sm text-gray-500">Showing 1 to 5 of 1,245 entries</p>
                         <div class="flex gap-1">
                             <button
@@ -632,6 +656,27 @@
             }
         });
     </script>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const toggleBtn = document.getElementById('sidebarToggle');
+
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        toggleBtn.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+
 
 </body>
 
