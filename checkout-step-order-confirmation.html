@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout page Step</title>
+    <!-- Final compiled CSS -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/slick.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="header-main">
+            <a href="javascript:void(0)" class="btn-hamburger hamburger-js xl:hidden">
+                <span></span>
+            </a>
+            <div class="header-logo">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.svg" alt="logo" width="" height="">
+                </a>
+            </div>
+            <div class="header-location hidden md:block">
+                <a class="context-selector" href="javascript:void(0);">
+                    <span class="context-selector__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                    <span class="context-selector__content">
+                        <span class="context-selector__label">Deliver to</span>
+                        <span class="context-selector__value">Hillsboro 97124</span>
+                    </span>
+                </a>
+            </div>
+            <div class="header-search">
+                <form id="header-search-form" action="" class="form" method="" name="" role="">
+                    <div class="main-search">
+                        <div class="main-search__type">
+                            <select class="form-control">
+                                <option selected="selected" value="">All Departments</option>
+                                <option value="">Arts &amp; Crafts</option>
+                                <option value="">Automotive</option>
+                                <option value="">Baby</option>
+                            </select>
+                        </div>
+                        <div class="main-search__field">
+                            <input type="text" placeholder="Search Amazon" class="form-control">
+                        </div>
+                        <div class="main-search__action">
+                            <input type="submit" class="btn btn-primary main-search--btn" value="Search" tabindex="0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="header-tools">
+                <div class="header-language">
+                    <a href="javascript:void(0);" class="language-filter">
+                        <span class="language-filter-media">
+                            <img src="assets/images/flags/us.png" alt="">
+                        </span>
+                        <span class="language-filter-value">EN</span>
+                    </a>
+                    <div class="header-language-dropdown" style="display: none;"></div>
+                </div>
+                <div class="header-account">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__media xl:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="context-selector__content">
+                            <span class="context-selector__label">Hello, sign in</span>
+                            <span class="context-selector__value !hidden xl:!block">Account & Lists</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="header-order">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__content">
+                            <span class="context-selector__label">Returns</span>
+                            <span class="context-selector__value">& Orders</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="header-cart">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.45973 24C8.12943 24 7.0471 22.8437 7.0471 21.4225C7.0471 20.0013 8.12943 18.8454 9.45973 18.8454C10.79 18.8454 11.8724 20.0013 11.8724 21.4225C11.8724 22.8437 10.79 24 9.45973 24ZM9.45973 20.4632C9.2216 20.4634 8.99328 20.5645 8.82486 20.7444C8.65644 20.9242 8.56168 21.1681 8.56138 21.4225C8.56138 21.9519 8.96418 22.3822 9.45973 22.3822C9.95528 22.3822 10.3581 21.9519 10.3581 21.4225C10.3578 21.1681 10.263 20.9242 10.0946 20.7444C9.92619 20.5645 9.69786 20.4634 9.45973 20.4632ZM17.8466 24C16.5163 24 15.4343 22.8437 15.4343 21.4225C15.4343 20.0013 16.5163 18.8454 17.8466 18.8454C19.1769 18.8454 20.2592 20.0013 20.2592 21.4225C20.2592 22.8437 19.1765 24 17.8466 24ZM17.8466 20.4632C17.6085 20.4635 17.3803 20.5647 17.212 20.7445C17.0436 20.9243 16.9489 21.1682 16.9486 21.4225C16.9488 21.6769 17.0435 21.9208 17.2118 22.1008C17.3802 22.2807 17.6085 22.3819 17.8466 22.3822C18.0848 22.382 18.3132 22.2808 18.4816 22.1009C18.65 21.921 18.7447 21.677 18.7449 21.4225C18.7446 21.1681 18.6499 20.9242 18.4815 20.7444C18.3131 20.5645 18.0847 20.4634 17.8466 20.4632ZM19.613 16.8475H7.71868C7.15968 16.8498 6.61668 16.6482 6.17953 16.276C5.74239 15.9038 5.4373 15.3833 5.31476 14.8006L2.84609 3.28337C2.82974 3.20785 2.79751 3.13729 2.75186 3.07703C2.70622 3.01677 2.64834 2.96839 2.58261 2.93555L0.534918 1.92162C0.311222 1.80623 0.138957 1.60151 0.0552942 1.35164C-0.0283689 1.10176 -0.0167224 0.826764 0.0877206 0.58598C0.192164 0.345197 0.38103 0.157934 0.613565 0.0645982C0.846101 -0.0287373 1.10366 -0.0206619 1.33067 0.0870817L3.37837 1.10101C3.70574 1.2643 3.99406 1.505 4.22152 1.80489C4.44897 2.10478 4.6096 2.45602 4.69125 2.83202L7.15991 14.3501C7.18838 14.4855 7.2593 14.6065 7.36091 14.693C7.46253 14.7795 7.58876 14.8263 7.71868 14.8257H19.613C19.7426 14.8261 19.8685 14.7795 19.97 14.6934C20.0715 14.6074 20.1427 14.487 20.1718 14.3521L22.0911 5.53003C22.1114 5.44034 22.1122 5.34685 22.0933 5.25681C22.0744 5.16676 22.0363 5.08257 21.9821 5.01073C21.9289 4.938 21.8607 4.87932 21.7828 4.8392C21.705 4.79909 21.6195 4.77863 21.5331 4.77939H7.52599C7.27498 4.77939 7.03426 4.67287 6.85677 4.48325C6.67928 4.29363 6.57956 4.03645 6.57956 3.76829C6.57956 3.50013 6.67928 3.24296 6.85677 3.05334C7.03426 2.86372 7.27498 2.75719 7.52599 2.75719H21.5331C22.2899 2.75719 22.9933 3.11998 23.4642 3.75293C23.9352 4.38587 24.1063 5.20042 23.9352 5.98786L22.0154 14.8103C21.8907 15.3907 21.585 15.9085 21.1484 16.2787C20.7118 16.6489 20.1704 16.8495 19.613 16.8475Z" />
+                            </svg>
+                            <span class="header-cart-value">2</span>
+                        </span>
+                        <span class="context-selector__content hidden md:block">
+                            <span class="context-selector__value">Cart</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-nav">
+                <a href="javascript:void(0)" class="btn-hamburger hamburger-js hidden xl:block">
+                    <span></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Today's Deals</a></li>
+                    <li><a href="#" class="nav-link">Prime Video</a></li>
+                    <li><a href="#" class="nav-link">Registry</a></li>
+                    <li><a href="#" class="nav-link">Gift Cards</a></li>
+                    <li><a href="#" class="nav-link">Customer Service</a></li>
+                    <li><a href="#" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-location-mobile md:hidden p-4" data-label="show only for mobile view">
+            <a class="context-selector" href="javascript:void(0);">
+                <span class="context-selector__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                <span class="context-selector__content">
+                    <span class="context-selector__value">Hillsboro 97124</span>
+                </span>
+            </a>
+        </div>
+    </header>
+    <main id="main" class="main">
+        <div class="max-w-[1440px] mx-auto px-4 py-8">
+            <div id="success-banner" class="bg-white border border-gray-300 rounded mb-6 p-4 sm:p-6">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0">
+                        <svg class="w-10 h-10 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            fill="currentColor">
+                            <path
+                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                        </svg>
+                    </div>
+                    <!-- Content -->
+                    <div class="flex-1">
+                        <h1 class="text-lg sm:text-2xl font-semibold text-green-700 mb-1 sm:mb-2">
+                            Order Placed, thank you!
+                        </h1>
+                        <p class="text-sm text-gray-700 mb-1">
+                            Confirmation will be sent to your email.
+                        </p>
+                        <p class="text-xs text-gray-600">
+                            Save your order number:
+                            <span class="font-bold">114-3890356-8272261</span>
+                        </p>
+                    </div>
+                    <!-- CTA -->
+                    <div class="w-full sm:w-auto">
+                        <button
+                            class="w-full sm:w-auto bg-gradient-to-b from-[#f7dfa5] to-[#f0c14b]  border border-[#a88734] rounded  px-5 py-2 text-sm  hover:from-[#f5d78e] hover:to-[#edb932] transition-all shadow-sm">
+                            View or manage order
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-6 xl:grid-cols-3">
+                <div class="xl:col-span-2">
+
+                    <div id="delivery-info-section" class="bg-white border border-gray-300 rounded mb-6 p-6">
+                        <h2 class="text-lg font-bold mb-4">Delivery Information</h2>
+
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <i class="svg-icon text-green-600">
+                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                            <path
+                                                d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-green-700 mb-1">Arriving Thursday, January 16</p>
+                                    <p class="text-xs text-gray-600">Your package will be left near the front door or
+                                        porch.</p>
+                                </div>
+                            </div>
+
+                            <div class="ml-11 bg-gray-100 p-4 rounded">
+                                <p class="text-sm font-bold mb-2">Shipping Address</p>
+                                <p class="text-sm text-gray-700">John Smith</p>
+                                <p class="text-sm text-gray-700">123 Main Street</p>
+                                <p class="text-sm text-gray-700">San Francisco, CA 94102</p>
+                                <p class="text-sm text-gray-700">United States</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-300 pt-4">
+                            <h3 class="text-sm font-bold mb-3">Track your package</h3>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex-1">
+                                    <div class="relative">
+                                        <div class="absolute top-3 left-0 w-full h-0.5 bg-gray-300"></div>
+                                        <div class="absolute top-3 left-0 w-1/3 h-0.5 bg-orange-500"></div>
+                                        <div class="relative flex justify-between">
+                                            <div class="flex flex-col items-center">
+                                                <div
+                                                    class="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mb-2">
+                                                    <i class="svg-icon svg-icon--xs text-white text-xs">
+                                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 448 512">
+                                                            <path
+                                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z">
+                                                            </path>
+                                                        </svg>
+                                                    </i>
+                                                </div>
+                                                <span class="text-xs text-gray-700 font-bold">Order placed</span>
+                                                <span class="text-xs text-gray-500">Jan 14</span>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <div
+                                                    class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center mb-2">
+                                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-700">Preparing</span>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <div
+                                                    class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center mb-2">
+                                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-700">Shipped</span>
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                <div
+                                                    class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center mb-2">
+                                                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-700">Delivered</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="order-items-section" class="bg-white border border-gray-300 rounded mb-6 p-4 xl:p-6">
+                        <h2 class="text-lg font-bold mb-4">Your Order</h2>
+                        <div class="flex flex-col sm:flex-row items-start gap-4 pb-4 border-b border-gray-200 mb-4">
+                            <!-- Image -->
+                            <div
+                                class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 rounded overflow-hidden flex items-center justify-center flex-shrink-0">
+                                <img class="w-full h-full object-cover"
+                                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/714d0225c5-3f646ed017b35e302aa5.png"
+                                    alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="flex-1">
+                                <h3 class="text-sm font-normal mb-1">
+                                    <a href="#" class="text-blue-700 hover:text-orange-700 hover:underline">
+                                        Wireless Bluetooth Headphones, Over-Ear with Deep Bass, 30H Playtime
+                                    </a>
+                                </h3>
+
+                                <p class="text-xs text-gray-600 mb-1">
+                                    Color: Black
+                                </p>
+
+                                <p class="text-xs text-gray-600 mb-2">
+                                    Sold by: AudioTech Store
+                                </p>
+
+                                <p class="text-sm font-bold text-gray-900">
+                                    $49.99
+                                </p>
+                            </div>
+                            <!-- Actions -->
+                            <div class="w-full sm:w-auto sm:text-right flex flex-row sm:flex-col gap-2">
+                                <button class="text-xs text-blue-700 hover:text-orange-700 hover:underline">
+                                    Buy it again
+                                </button>
+                                <button class="text-xs text-blue-700 hover:text-orange-700 hover:underline">
+                                    View product
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start gap-4">
+                            <!-- Image -->
+                            <div class="w-24 h-24 bg-gray-100 rounded overflow-hidden flex items-center justify-center">
+                                <img class="w-full h-full object-cover"
+                                    src="https://storage.googleapis.com/uxpilot-auth.appspot.com/371643e368-b90a758215fc4da87e08.png"
+                                    alt="usb c charging cable white coiled product photography" />
+                            </div>
+                            <!-- Content -->
+                            <div class="flex-1">
+                                <h3 class="text-sm font-normal mb-1">
+                                    <a href="#" class="text-blue-700 hover:text-orange-700 hover:underline">USB-C
+                                        Fast Charging Cable, 6ft Braided Nylon, 3-Pack</a>
+                                </h3>
+                                <p class="text-xs text-gray-600 mb-1">Color: White</p>
+                                <p class="text-xs text-gray-600 mb-2">Sold by: Cable Express</p>
+                                <p class="text-sm font-bold text-gray-900">$15.99</p>
+                            </div>
+                            <!-- Actions -->
+                            <div class="w-full sm:w-auto sm:text-right flex flex-row sm:flex-col gap-2">
+                                <button class="text-xs text-blue-700 hover:text-orange-700 hover:underline">
+                                    Buy it again
+                                </button>
+                                <button class="text-xs text-blue-700 hover:text-orange-700 hover:underline">
+                                    View product
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="help-section" class="bg-white border border-gray-300 rounded p-4 md:p-6">
+                        <h2 class="text-lg font-bold mb-4">Need Help?</h2>
+                        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+                            <a href="#" class="border border-gray-300 rounded p-4 hover:bg-gray-100 transition-all">
+                                <div class="flex items-center mb-2">
+                                    <i class="svg-icon svg-icon--sm text-blue-700 mr-2">
+                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                    <span class="text-sm font-bold">Return items</span>
+                                </div>
+                                <p class="text-xs text-gray-600">Start a return or replacement</p>
+                            </a>
+                            <a href="#" class="border border-gray-300 rounded p-4 hover:bg-gray-100 transition-all">
+                                <div class="flex items-center mb-2">
+                                    <i class="svg-icon svg-icon--sm text-blue-700 mr-2">
+                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                    <span class="text-sm font-bold">Contact us</span>
+                                </div>
+                                <p class="text-xs text-gray-600">Get help with your order</p>
+                            </a>
+                            <a href="#" class="border border-gray-300 rounded p-4 hover:bg-gray-100 transition-all">
+                                <div class="flex items-center mb-2">
+                                    <i class="svg-icon svg-icon--sm text-blue-700 mr-2">
+                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM80 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm0 32v64H288V256H96zM240 416h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16s7.2-16 16-16z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                    <span class="text-sm font-bold">View invoice</span>
+                                </div>
+                                <p class="text-xs text-gray-600">Download your receipt</p>
+                            </a>
+                            <a href="#" class="border border-gray-300 rounded p-4 hover:bg-gray-100 transition-all">
+                                <div class="flex items-center mb-2">
+                                    <i class="svg-icon svg-icon--sm text-blue-700 mr-2">
+                                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                    <span class="text-sm font-bold">Gift options</span>
+                                </div>
+                                <p class="text-xs text-gray-600">Add gift wrap or message</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="xl:col-span-1">
+                    <div id="order-summary-section" class="bg-white border border-gray-300 rounded p-4 md:p-6 mb-6">
+                        <h2 class="text-lg font-bold mb-4">Order Summary</h2>
+
+                        <div class="space-y-2 mb-4 pb-4 border-b border-gray-200">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-700">Items (2):</span>
+                                <span class="text-gray-900">$65.98</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-700">Shipping & handling:</span>
+                                <span class="text-gray-900">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-700">Total before tax:</span>
+                                <span class="text-gray-900">$65.98</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-700">Estimated tax:</span>
+                                <span class="text-gray-900">$5.74</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between mb-6">
+                            <span class="text-lg font-bold text-red-700">Order Total:</span>
+                            <span class="text-lg font-bold text-red-700">$71.72</span>
+                        </div>
+
+                        <div class="bg-gray-100 p-4 rounded mb-4">
+                            <p class="text-xs font-bold mb-2">Payment Method</p>
+                            <div class="flex items-center">
+                                <i class="svg-icon svg-icon--xl text-blue-600 mr-2">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <path
+                                            d="M470.1 231.3s7.6 37.2 9.3 45H446c3.3-8.9 16-43.5 16-43.5-.2.3 3.3-9.1 5.3-14.9l2.8 13.4zM576 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48zM152.5 331.2L215.7 176h-42.5l-39.3 106-4.3-21.5-14-71.4c-2.3-9.9-9.4-12.7-18.2-13.1H32.7l-.7 3.1c15.8 4 29.9 9.8 42.2 17.1l35.8 135h42.5zm94.4.2L272.1 176h-40.2l-25.1 155.4h40.1zm139.9-50.8c.2-17.7-10.6-31.2-33.7-42.3-14.1-7.1-22.7-11.9-22.7-19.2.2-6.6 7.3-13.4 23.1-13.4 13.1-.3 22.7 2.8 29.9 5.9l3.6 1.7 5.5-33.6c-7.9-3.1-20.5-6.6-36-6.6-39.7 0-67.6 21.2-67.8 51.4-.3 22.3 20 34.7 35.2 42.2 15.5 7.6 20.8 12.6 20.8 19.3-.2 10.4-12.6 15.2-24.1 15.2-16 0-24.6-2.5-37.7-8.3l-5.3-2.5-5.6 34.9c9.4 4.3 26.8 8.1 44.8 8.3 42.2.1 69.7-20.8 70-53zM528 331.4L495.6 176h-31.1c-9.6 0-16.9 2.8-21 12.9l-59.7 142.5H426s6.9-19.2 8.4-23.3H486c1.2 5.5 4.8 23.3 4.8 23.3H528z">
+                                        </path>
+                                    </svg>
+                                </i>
+                                <div>
+                                    <p class="text-sm">Visa ending in 4242</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-xs text-gray-600">
+                            <p class="mb-2 flex items-start">
+                                <i class="svg-icon svg-icon--xs text-green-600 mr-2 mt-0.5">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path
+                                            d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z">
+                                        </path>
+                                    </svg>
+                                </i>
+                                <span>Your transaction is secure with SSL encryption</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="svg-icon svg-icon--xs text-gray-500 mr-2 mt-0.5">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                            d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z">
+                                        </path>
+                                    </svg>
+                                </i>
+                                <span>Protected by 50fifty's A-to-z Guarantee</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="recommendations-section" class="bg-white border border-gray-300 rounded p-4 md:p-6">
+                        <h2 class="text-base font-bold mb-4">Customers who bought this also bought</h2>
+
+                        <div class="space-y-4">
+                            <a href="#" class="flex items-start hover:bg-gray-100 p-2 rounded transition-all">
+                                <div
+                                    class="w-16 h-16 bg-gray-100 rounded mr-3 overflow-hidden flex items-center justify-center">
+                                    <img class="w-full h-full object-cover"
+                                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/015ee66354-686e8ba66091efe93fee.png"
+                                        alt="phone stand holder aluminum silver product shot" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs mb-1 line-clamp-2">Adjustable Phone Stand, Aluminum Desktop Holder
+                                    </p>
+                                    <div class="flex items-center mb-1">
+                                        <div class="flex items-center">
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#half-star"></use>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <span class="text-xs text-blue-700 ms-2">1,234</span>
+                                    </div>
+                                    <p class="text-sm font-bold">$19.99</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-start hover:bg-gray-100 p-2 rounded transition-all">
+                                <div
+                                    class="w-16 h-16 bg-gray-100 rounded mr-3 overflow-hidden flex items-center justify-center">
+                                    <img class="w-full h-full object-cover"
+                                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e04e21910b-941377b1a7b7509ce162.png"
+                                        alt="wireless mouse ergonomic black modern product photography" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs mb-1 line-clamp-2">Wireless Mouse, Ergonomic Design, Silent Click
+                                    </p>
+                                    <div class="flex items-center mb-1">
+                                        <div class="flex items-center">
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#half-star"></use>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <span class="text-xs text-blue-700 ms-2">892</span>
+                                    </div>
+                                    <p class="text-sm font-bold">$24.99</p>
+                                </div>
+                            </a>
+
+                            <a href="#" class="flex items-start hover:bg-gray-100 p-2 rounded transition-all">
+                                <div
+                                    class="w-16 h-16 bg-gray-100 rounded mr-3 overflow-hidden flex items-center justify-center">
+                                    <img class="w-full h-full object-cover"
+                                        src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ccb5720fe1-f795bc8e3e4cc013bf12.png"
+                                        alt="laptop sleeve case grey minimalist product shot" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs mb-1 line-clamp-2">Laptop Sleeve 13-inch, Water Resistant
+                                        Protective Case</p>
+                                    <div class="flex items-center mb-1">
+                                        <div class="flex items-center">
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#fill-star"></use>
+                                                </svg>
+                                            </i>
+                                            <i class="text-[#f08804] svg-icon svg-icon--xs">
+                                                <svg class="svg" width="18" height="18">
+                                                    <use xlink:href="assets/images/retina/sprite.svg#half-star"></use>
+                                                </svg>
+                                            </i>
+                                        </div>
+                                        <span class="text-xs text-blue-700 ms-2">567</span>
+                                    </div>
+                                    <p class="text-sm font-bold">$16.99</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="continue-shopping-section"
+                class="bg-white border border-gray-300 rounded p-4 md:p-6 mt-6 text-center">
+                <p class="text-sm text-gray-700 mb-4">Want to keep shopping?</p>
+                <a href="#"
+                    class="inline-block bg-gradient-to-b from-[#f7dfa5] to-[#f0c14b] border border-[#a88734] rounded px-8 py-2 text-sm hover:from-[#f5d78e] hover:to-[#edb932] transition-all shadow-sm">
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <a href="#" class="backtotop">Back to top</a>
+        </div>
+        <div class="footer-main">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap xl:flex-nowrap gap-6 md:gap-4">
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Get to Know Us</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Careers</a></li>
+                                        <li><a target="_self" href="/">Blog</a></li>
+                                        <li><a target="_self" href="/">About Amazon</a></li>
+                                        <li><a target="_self" href="/">Investor Relations</a></li>
+                                        <li><a target="_self" href="/">Amazon Devices</a></li>
+                                        <li><a target="_self" href="/">Amazon Science</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Make Money with Us</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Sell products on Amazon</a></li>
+                                        <li><a target="_self" href="/">Sell on Amazon Business</a></li>
+                                        <li><a target="_self" href="/">Sell apps on Amazon</a></li>
+                                        <li><a target="_self" href="/">Become an Affiliate</a></li>
+                                        <li><a target="_self" href="/">Advertise Your Products</a></li>
+                                        <li><a target="_self" href="/">Self-Publish with Us</a></li>
+                                        <li><a target="_self" href="/">Host an Amazon Hub</a></li>
+                                        <li><a target="_self" href="/">›See More Make Money with Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Amazon Payment Products</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/"> Amazon Business Card</a></li>
+                                        <li><a target="_self" href="/">Shop with Points</a></li>
+                                        <li><a target="_self" href="/">Reload Your Balance</a></li>
+                                        <li><a target="_self" href="/">Amazon Currency Converter</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Let Us Help You</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Amazon and COVID-19</a></li>
+                                        <li><a target="_self" href="/">Your Account</a></li>
+                                        <li><a target="_self" href="/">Your Orders</a></li>
+                                        <li><a target="_self" href="/">Shipping Rates & Policies</a></li>
+                                        <li><a target="_self" href="/">Returns & Replacements</a></li>
+                                        <li><a target="_self" href="/">Manage Your Content and Devices</a></li>
+                                        <li><a target="_self" href="/">Help</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container mx-auto max-w-[1000px]">
+                <div class="flex items-center justify-center gap-4 md:-gap-10 flex-wrap">
+                    <div class="footer-logo">
+                        <a href="#"><img src="assets/images/logo.svg" alt=""></a>
+                    </div>
+                    <ul class="footer-tools flex flex-wrap items-center justify-center gap-3">
+                        <li>
+                            <a href="#" class="btn btn--lang-update">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        width="18px" height="18px">
+                                        <path
+                                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn">
+                                <span class="currency-symbol">$</span>
+                                <span>USD - U.S. Dollar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn">
+                                <span class="flag-media">
+                                    <img src="assets/images/flags/us.png" alt="">
+                                </span>
+                                <span>United States</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

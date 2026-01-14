@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout page Step</title>
+    <!-- Final compiled CSS -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/slick.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="header-main">
+            <a href="javascript:void(0)" class="btn-hamburger hamburger-js xl:hidden">
+                <span></span>
+            </a>
+            <div class="header-logo">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.svg" alt="logo" width="" height="">
+                </a>
+            </div>
+            <div class="header-location hidden md:block">
+                <a class="context-selector" href="javascript:void(0);">
+                    <span class="context-selector__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                    <span class="context-selector__content">
+                        <span class="context-selector__label">Deliver to</span>
+                        <span class="context-selector__value">Hillsboro 97124</span>
+                    </span>
+                </a>
+            </div>
+            <div class="header-search">
+                <form id="header-search-form" action="" class="form" method="" name="" role="">
+                    <div class="main-search">
+                        <div class="main-search__type">
+                            <select class="form-control">
+                                <option selected="selected" value="">All Departments</option>
+                                <option value="">Arts &amp; Crafts</option>
+                                <option value="">Automotive</option>
+                                <option value="">Baby</option>
+                            </select>
+                        </div>
+                        <div class="main-search__field">
+                            <input type="text" placeholder="Search Amazon" class="form-control">
+                        </div>
+                        <div class="main-search__action">
+                            <input type="submit" class="btn btn-primary main-search--btn" value="Search" tabindex="0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="header-tools">
+                <div class="header-language">
+                    <a href="javascript:void(0);" class="language-filter">
+                        <span class="language-filter-media">
+                            <img src="assets/images/flags/us.png" alt="">
+                        </span>
+                        <span class="language-filter-value">EN</span>
+                    </a>
+                    <div class="header-language-dropdown" style="display: none;"></div>
+                </div>
+                <div class="header-account">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__media xl:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="context-selector__content">
+                            <span class="context-selector__label">Hello, sign in</span>
+                            <span class="context-selector__value !hidden xl:!block">Account & Lists</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="header-order">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__content">
+                            <span class="context-selector__label">Returns</span>
+                            <span class="context-selector__value">& Orders</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="header-cart">
+                    <a class="context-selector" href="javascript:void(0);">
+                        <span class="context-selector__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.45973 24C8.12943 24 7.0471 22.8437 7.0471 21.4225C7.0471 20.0013 8.12943 18.8454 9.45973 18.8454C10.79 18.8454 11.8724 20.0013 11.8724 21.4225C11.8724 22.8437 10.79 24 9.45973 24ZM9.45973 20.4632C9.2216 20.4634 8.99328 20.5645 8.82486 20.7444C8.65644 20.9242 8.56168 21.1681 8.56138 21.4225C8.56138 21.9519 8.96418 22.3822 9.45973 22.3822C9.95528 22.3822 10.3581 21.9519 10.3581 21.4225C10.3578 21.1681 10.263 20.9242 10.0946 20.7444C9.92619 20.5645 9.69786 20.4634 9.45973 20.4632ZM17.8466 24C16.5163 24 15.4343 22.8437 15.4343 21.4225C15.4343 20.0013 16.5163 18.8454 17.8466 18.8454C19.1769 18.8454 20.2592 20.0013 20.2592 21.4225C20.2592 22.8437 19.1765 24 17.8466 24ZM17.8466 20.4632C17.6085 20.4635 17.3803 20.5647 17.212 20.7445C17.0436 20.9243 16.9489 21.1682 16.9486 21.4225C16.9488 21.6769 17.0435 21.9208 17.2118 22.1008C17.3802 22.2807 17.6085 22.3819 17.8466 22.3822C18.0848 22.382 18.3132 22.2808 18.4816 22.1009C18.65 21.921 18.7447 21.677 18.7449 21.4225C18.7446 21.1681 18.6499 20.9242 18.4815 20.7444C18.3131 20.5645 18.0847 20.4634 17.8466 20.4632ZM19.613 16.8475H7.71868C7.15968 16.8498 6.61668 16.6482 6.17953 16.276C5.74239 15.9038 5.4373 15.3833 5.31476 14.8006L2.84609 3.28337C2.82974 3.20785 2.79751 3.13729 2.75186 3.07703C2.70622 3.01677 2.64834 2.96839 2.58261 2.93555L0.534918 1.92162C0.311222 1.80623 0.138957 1.60151 0.0552942 1.35164C-0.0283689 1.10176 -0.0167224 0.826764 0.0877206 0.58598C0.192164 0.345197 0.38103 0.157934 0.613565 0.0645982C0.846101 -0.0287373 1.10366 -0.0206619 1.33067 0.0870817L3.37837 1.10101C3.70574 1.2643 3.99406 1.505 4.22152 1.80489C4.44897 2.10478 4.6096 2.45602 4.69125 2.83202L7.15991 14.3501C7.18838 14.4855 7.2593 14.6065 7.36091 14.693C7.46253 14.7795 7.58876 14.8263 7.71868 14.8257H19.613C19.7426 14.8261 19.8685 14.7795 19.97 14.6934C20.0715 14.6074 20.1427 14.487 20.1718 14.3521L22.0911 5.53003C22.1114 5.44034 22.1122 5.34685 22.0933 5.25681C22.0744 5.16676 22.0363 5.08257 21.9821 5.01073C21.9289 4.938 21.8607 4.87932 21.7828 4.8392C21.705 4.79909 21.6195 4.77863 21.5331 4.77939H7.52599C7.27498 4.77939 7.03426 4.67287 6.85677 4.48325C6.67928 4.29363 6.57956 4.03645 6.57956 3.76829C6.57956 3.50013 6.67928 3.24296 6.85677 3.05334C7.03426 2.86372 7.27498 2.75719 7.52599 2.75719H21.5331C22.2899 2.75719 22.9933 3.11998 23.4642 3.75293C23.9352 4.38587 24.1063 5.20042 23.9352 5.98786L22.0154 14.8103C21.8907 15.3907 21.585 15.9085 21.1484 16.2787C20.7118 16.6489 20.1704 16.8495 19.613 16.8475Z" />
+                            </svg>
+                            <span class="header-cart-value">2</span>
+                        </span>
+                        <span class="context-selector__content hidden md:block">
+                            <span class="context-selector__value">Cart</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-nav">
+                <a href="javascript:void(0)" class="btn-hamburger hamburger-js hidden xl:block">
+                    <span></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Today's Deals</a></li>
+                    <li><a href="#" class="nav-link">Prime Video</a></li>
+                    <li><a href="#" class="nav-link">Registry</a></li>
+                    <li><a href="#" class="nav-link">Gift Cards</a></li>
+                    <li><a href="#" class="nav-link">Customer Service</a></li>
+                    <li><a href="#" class="nav-link">Sell</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-location-mobile md:hidden p-4" data-label="show only for mobile view">
+            <a class="context-selector" href="javascript:void(0);">
+                <span class="context-selector__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 0C7.20726 0 3.30811 3.89916 3.30811 8.69184C3.30811 14.6397 11.0865 23.3715 11.4177 23.7404C11.7287 24.0868 12.2718 24.0862 12.5823 23.7404C12.9135 23.3715 20.6919 14.6397 20.6919 8.69184C20.6918 3.89916 16.7927 0 12 0ZM12 13.065C9.58865 13.065 7.62693 11.1032 7.62693 8.69184C7.62693 6.2805 9.5887 4.31878 12 4.31878C14.4113 4.31878 16.373 6.28055 16.373 8.69189C16.373 11.1032 14.4113 13.065 12 13.065Z"
+                            fill="currentColor" />
+                    </svg>
+                </span>
+                <span class="context-selector__content">
+                    <span class="context-selector__value">Hillsboro 97124</span>
+                </span>
+            </a>
+        </div>
+    </header>
+    <main id="main" class="main">
+        <div id="checkout-progress" class="bg-amazon-light border-b border-gray-300">
+            <div class="max-w-[1440px] mx-auto px-4 py-3">
+                <!-- Mobile -->
+                <div class="md:hidden">
+                    <div class="text-xs text-gray-500 mb-1">
+                        Step 3 of 4
+                    </div>
+                    <div class="text-sm font-bold text-amazon-dark">
+                        Payment Method
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center justify-center gap-2 text-xs">
+                    <span class="text-gray-500">1. Sign in</span>
+                    <i class="svg-icon svg-icon--xs text-gray-400">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                            </path>
+                        </svg>
+                    </i>
+                    <span class="text-gray-500">2. Delivery address</span>
+                    <i class="svg-icon svg-icon--xs text-gray-400">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                            </path>
+                        </svg>
+                    </i>
+                    <span class="font-bold">3. Payment method</span>
+                    <i class="svg-icon svg-icon--xs text-gray-400">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                            </path>
+                        </svg>
+                    </i>
+                    <span class="text-gray-500">4. Review order</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1000px] mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div id="payment-left-column" class="flex-1">
+                    <div id="payment-method-section"
+                        class="bg-white border border-gray-300 rounded mb-4 overflow-hidden">
+                        <div class="bg-gray-100 border-b border-gray-300 px-6 py-3">
+                            <h1 class="text-xl font-bold text-amazon-dark">Payment method</h1>
+                        </div>
+
+                        <div class="px-4 md:px-6 py-5">
+                            <div id="saved-cards-section" class="mb-6">
+                                <h2 class="text-base font-bold mb-4">Your credit and debit cards</h2>
+
+                                <div id="card-1"
+                                    class="border border-gray-300 rounded p-4 mb-3 hover:bg-amazon-light cursor-pointer transition-colors">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="payment" class="mt-1 mr-3" checked>
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <i class="svg-icon svg-icon--xl text-blue-500">
+                                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M470.1 231.3s7.6 37.2 9.3 45H446c3.3-8.9 16-43.5 16-43.5-.2.3 3.3-9.1 5.3-14.9l2.8 13.4zM576 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48zM152.5 331.2L215.7 176h-42.5l-39.3 106-4.3-21.5-14-71.4c-2.3-9.9-9.4-12.7-18.2-13.1H32.7l-.7 3.1c15.8 4 29.9 9.8 42.2 17.1l35.8 135h42.5zm94.4.2L272.1 176h-40.2l-25.1 155.4h40.1zm139.9-50.8c.2-17.7-10.6-31.2-33.7-42.3-14.1-7.1-22.7-11.9-22.7-19.2.2-6.6 7.3-13.4 23.1-13.4 13.1-.3 22.7 2.8 29.9 5.9l3.6 1.7 5.5-33.6c-7.9-3.1-20.5-6.6-36-6.6-39.7 0-67.6 21.2-67.8 51.4-.3 22.3 20 34.7 35.2 42.2 15.5 7.6 20.8 12.6 20.8 19.3-.2 10.4-12.6 15.2-24.1 15.2-16 0-24.6-2.5-37.7-8.3l-5.3-2.5-5.6 34.9c9.4 4.3 26.8 8.1 44.8 8.3 42.2.1 69.7-20.8 70-53zM528 331.4L495.6 176h-31.1c-9.6 0-16.9 2.8-21 12.9l-59.7 142.5H426s6.9-19.2 8.4-23.3H486c1.2 5.5 4.8 23.3 4.8 23.3H528z">
+                                                        </path>
+                                                    </svg>
+                                                </i>
+                                                <div>
+                                                    <div class="font-bold text-sm">Visa ending in 4242</div>
+                                                    <div class="text-xs text-gray-600">John Smith</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-xs text-gray-700 mt-2">
+                                                Expires 12/2026
+                                            </div>
+                                            <div class="text-xs text-gray-600 mt-1">
+                                                Billing address: 123 Main Street, New York, NY 10001
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div id="card-2"
+                                    class="border border-gray-300 rounded p-4 mb-3 hover:bg-amazon-light cursor-pointer transition-colors">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="payment" class="mt-1 mr-3">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <i class="svg-icon svg-icon--xl text-red-600">
+                                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 576 512">
+                                                        <path
+                                                            d="M482.9 410.3c0 6.8-4.6 11.7-11.2 11.7-6.8 0-11.2-5.2-11.2-11.7 0-6.5 4.4-11.7 11.2-11.7 6.6 0 11.2 5.2 11.2 11.7zm-310.8-11.7c-7.1 0-11.2 5.2-11.2 11.7 0 6.5 4.1 11.7 11.2 11.7 6.5 0 10.9-4.9 10.9-11.7-.1-6.5-4.4-11.7-10.9-11.7zm117.5-.3c-5.4 0-8.7 3.5-9.5 8.7h19.1c-.9-5.7-4.4-8.7-9.6-8.7zm107.8.3c-6.8 0-10.9 5.2-10.9 11.7 0 6.5 4.1 11.7 10.9 11.7 6.8 0 11.2-4.9 11.2-11.7 0-6.5-4.4-11.7-11.2-11.7zm105.9 26.1c0 .3.3.5.3 1.1 0 .3-.3.5-.3 1.1-.3.3-.3.5-.5.8-.3.3-.5.5-1.1.5-.3.3-.5.3-1.1.3-.3 0-.5 0-1.1-.3-.3 0-.5-.3-.8-.5-.3-.3-.5-.5-.5-.8-.3-.5-.3-.8-.3-1.1 0-.5 0-.8.3-1.1 0-.5.3-.8.5-1.1.3-.3.5-.3.8-.5.5-.3.8-.3 1.1-.3.5 0 .8 0 1.1.3.5.3.8.3 1.1.5s.2.6.5 1.1zm-2.2 1.4c.5 0 .5-.3.8-.3.3-.3.3-.5.3-.8 0-.3 0-.5-.3-.8-.3 0-.5-.3-1.1-.3h-1.6v3.5h.8V426h.3l1.1 1.4h.8l-1.1-1.3zM576 81v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V81c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48zM64 220.6c0 76.5 62.1 138.5 138.5 138.5 27.2 0 53.9-8.2 76.5-23.1-72.9-59.3-72.4-171.2 0-230.5-22.6-15-49.3-23.1-76.5-23.1-76.4-.1-138.5 62-138.5 138.2zm224 108.8c70.5-55 70.2-162.2 0-217.5-70.2 55.3-70.5 162.6 0 217.5zm-142.3 76.3c0-8.7-5.7-14.4-14.7-14.7-4.6 0-9.5 1.4-12.8 6.5-2.4-4.1-6.5-6.5-12.2-6.5-3.8 0-7.6 1.4-10.6 5.4V392h-8.2v36.7h8.2c0-18.9-2.5-30.2 9-30.2 10.2 0 8.2 10.2 8.2 30.2h7.9c0-18.3-2.5-30.2 9-30.2 10.2 0 8.2 10 8.2 30.2h8.2v-23zm44.9-13.7h-7.9v4.4c-2.7-3.3-6.5-5.4-11.7-5.4-10.3 0-18.2 8.2-18.2 19.3 0 11.2 7.9 19.3 18.2 19.3 5.2 0 9-1.9 11.7-5.4v4.6h7.9V392zm40.5 25.6c0-15-22.9-8.2-22.9-15.2 0-5.7 11.9-4.8 18.5-1.1l3.3-6.5c-9.4-6.1-30.2-6-30.2 8.2 0 14.3 22.9 8.3 22.9 15 0 6.3-13.5 5.8-20.7.8l-3.5 6.3c11.2 7.6 32.6 6 32.6-7.5zm35.4 9.3l-2.2-6.8c-3.8 2.1-12.2 4.4-12.2-4.1v-16.6h13.1V392h-13.1v-11.2h-8.2V392h-7.6v7.3h7.6V416c0 17.6 17.3 14.4 22.6 10.9zm13.3-13.4h27.5c0-16.2-7.4-22.6-17.4-22.6-10.6 0-18.2 7.9-18.2 19.3 0 20.5 22.6 23.9 33.8 14.2l-3.8-6c-7.8 6.4-19.6 5.8-21.9-4.9zm59.1-21.5c-4.6-2-11.6-1.8-15.2 4.4V392h-8.2v36.7h8.2V408c0-11.6 9.5-10.1 12.8-8.4l2.4-7.6zm10.6 18.3c0-11.4 11.6-15.1 20.7-8.4l3.8-6.5c-11.6-9.1-32.7-4.1-32.7 15 0 19.8 22.4 23.8 32.7 15l-3.8-6.5c-9.2 6.5-20.7 2.6-20.7-8.6zm66.7-18.3H408v4.4c-8.3-11-29.9-4.8-29.9 13.9 0 19.2 22.4 24.7 29.9 13.9v4.6h8.2V392zm33.7 0c-2.4-1.2-11-2.9-15.2 4.4V392h-7.9v36.7h7.9V408c0-11 9-10.3 12.8-8.4l2.4-7.6zm40.3-14.9h-7.9v19.3c-8.2-10.9-29.9-5.1-29.9 13.9 0 19.4 22.5 24.6 29.9 13.9v4.6h7.9v-51.7zm7.6-75.1v4.6h.8V302h1.9v-.8h-4.6v.8h1.9zm6.6 123.8c0-.5 0-1.1-.3-1.6-.3-.3-.5-.8-.8-1.1-.3-.3-.8-.5-1.1-.8-.5 0-1.1-.3-1.6-.3-.3 0-.8.3-1.4.3-.5.3-.8.5-1.1.8-.5.3-.8.8-.8 1.1-.3.5-.3 1.1-.3 1.6 0 .3 0 .8.3 1.4 0 .3.3.8.8 1.1.3.3.5.5 1.1.8.5.3 1.1.3 1.4.3.5 0 1.1 0 1.6-.3.3-.3.8-.5 1.1-.8.3-.3.5-.8.8-1.1.3-.6.3-1.1.3-1.4zm3.2-124.7h-1.4l-1.6 3.5-1.6-3.5h-1.4v5.4h.8v-4.1l1.6 3.5h1.1l1.4-3.5v4.1h1.1v-5.4zm4.4-80.5c0-76.2-62.1-138.3-138.5-138.3-27.2 0-53.9 8.2-76.5 23.1 72.1 59.3 73.2 171.5 0 230.5 22.6 15 49.5 23.1 76.5 23.1 76.4.1 138.5-61.9 138.5-138.4z">
+                                                        </path>
+                                                    </svg>
+                                                </i>
+                                                <div>
+                                                    <div class="font-bold text-sm">Mastercard ending in 8888</div>
+                                                    <div class="text-xs text-gray-600">John Smith</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-xs text-gray-700 mt-2">
+                                                Expires 08/2025
+                                            </div>
+                                            <div class="text-xs text-gray-600 mt-1">
+                                                Billing address: 123 Main Street, New York, NY 10001
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div id="add-card-option"
+                                    class="border border-gray-300 rounded p-4 hover:bg-amazon-light cursor-pointer transition-colors">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="payment" class="mt-1 mr-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="svg-icon text-gray-500">
+                                                <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 576 512">
+                                                    <path
+                                                        d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z">
+                                                    </path>
+                                                </svg>
+                                            </i>
+                                            <div class="font-bold text-sm text-amazon-blue">Add a credit or debit card
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="add-card-form" class="hidden border-t border-gray-300 pt-6 mt-6">
+                                <h3 class="text-base font-bold mb-4">Add a new card</h3>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-1">Card number</label>
+                                    <input type="text" placeholder="1234 5678 9012 3456"
+                                        class="w-full border border-gray-400 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-amazon-orange focus:border-amazon-orange">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-1">Name on card</label>
+                                    <input type="text"
+                                        class="w-full border border-gray-400 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-amazon-orange focus:border-amazon-orange">
+                                </div>
+                                <div class="flex flex-col md:flex-row gap-4 mb-4">
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-bold mb-1">Expiration date</label>
+                                        <input type="text" placeholder="MM/YY"
+                                            class="w-full border border-gray-400 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-amazon-orange focus:border-amazon-orange">
+                                    </div>
+                                    <div class="flex-1">
+                                        <label class="block text-sm font-bold mb-1">Security code (CVV)</label>
+                                        <input type="text" placeholder="123" maxlength="4"
+                                            class="w-full border border-gray-400 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-amazon-orange focus:border-amazon-orange">
+                                    </div>
+                                </div>
+                                <div class="flex items-center mb-4">
+                                    <input type="checkbox" id="save-card" class="mr-2">
+                                    <label for="save-card" class="text-sm text-gray-700">Save card for future
+                                        purchases</label>
+                                </div>
+                            </div>
+
+                            <div id="billing-address-section" class="border-t border-gray-300 pt-6 mt-6">
+                                <h3 class="text-base font-bold mb-4">Billing address</h3>
+
+                                <div class="mb-3">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="billing" class="mt-1 mr-3" checked>
+                                        <div class="text-sm">
+                                            <div class="font-bold mb-1">Use my delivery address</div>
+                                            <div class="text-gray-600 text-xs">
+                                                John Smith<br>
+                                                123 Main Street<br>
+                                                New York, NY 10001<br>
+                                                United States
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="billing" class="mt-1 mr-3">
+                                        <div class="text-sm font-bold">Use a different billing address</div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="other-payment-options" class="border-t border-gray-300 pt-6 mt-6">
+                                <h3 class="text-base font-bold mb-4">Other payment options</h3>
+
+                                <div
+                                    class="border border-gray-300 rounded p-4 mb-3 hover:bg-amazon-light cursor-pointer transition-colors">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="payment" class="mt-1 mr-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="svg-icon text-blue-600">
+                                                <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-13.9L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4.7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 15.7-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z">
+                                                    </path>
+                                                </svg>
+                                            </i>
+                                            <div class="font-bold text-sm">PayPal</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div
+                                    class="border border-gray-300 rounded p-4 hover:bg-amazon-light cursor-pointer transition-colors">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="radio" name="payment" class="mt-1 mr-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="svg-icon text-gray-600">
+                                                <svg class="svg" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 512 512">
+                                                    <path
+                                                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z">
+                                                    </path>
+                                                </svg>
+                                            </i>
+                                            <div class="font-bold text-sm">Bank account (ACH)</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="continue-button-section" class="flex justify-end">
+                        <button
+                            class="bg-gradient-to-b from-[#f7dfa5] to-[#f0c14b] border border-[#a88734] rounded px-8 py-2 text-sm hover:from-[#f5d78e] hover:to-[#edb932] transition-all shadow-sm font-normal">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+                <div id="order-summary-column" class="md:w-80">
+                    <div id="order-summary-box" class="bg-white border border-gray-300 rounded p-4 sticky top-4">
+                        <button
+                            class="w-full bg-gradient-to-b from-[#f7dfa5] to-[#f0c14b] border border-[#a88734] rounded py-2 text-sm hover:from-[#f5d78e] hover:to-[#edb932] transition-all shadow-sm mb-3 font-normal">
+                            Use this payment method
+                        </button>
+                        <div class="text-xs text-center text-gray-600 mb-4">
+                            Choose a payment method to continue checking out. You'll still have a chance to review and
+                            edit your order before it's final.
+                        </div>
+                        <div class="border-t border-gray-300 pt-4">
+                            <h3 class="text-lg font-bold mb-4">Order Summary</h3>
+                            <div class="space-y-2 text-sm mb-4">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Items (3):</span>
+                                    <span class="text-gray-900">$127.97</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Shipping & handling:</span>
+                                    <span class="text-gray-900">$8.99</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Total before tax:</span>
+                                    <span class="text-gray-900">$136.96</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Estimated tax:</span>
+                                    <span class="text-gray-900">$12.33</span>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-300 pt-3 mb-4">
+                                <div class="flex justify-between text-lg font-bold text-red-700">
+                                    <span>Order total:</span>
+                                    <span>$149.29</span>
+                                </div>
+                            </div>
+                            <div class="text-xs text-blue-700">
+                                <a href="#" class="hover:text-orange-700 hover:underline">
+                                    How are shipping costs calculated?
+                                </a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-300 mt-4 pt-4">
+                            <div class="flex items-center text-sm mb-2 font-semibold">
+                                <i class="svg-icon svg-icon--xs text-gray-400 mr-2">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor"
+                                            d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z">
+                                        </path>
+                                    </svg>
+                                </i>
+                                <span>Secure transaction</span>
+                            </div>
+                            <div class="text-xs text-gray-600">
+                                Your payment information is protected with industry-standard encryption.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <a href="#" class="backtotop">Back to top</a>
+        </div>
+        <div class="footer-main">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap xl:flex-nowrap gap-6 md:gap-4">
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Get to Know Us</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Careers</a></li>
+                                        <li><a target="_self" href="/">Blog</a></li>
+                                        <li><a target="_self" href="/">About Amazon</a></li>
+                                        <li><a target="_self" href="/">Investor Relations</a></li>
+                                        <li><a target="_self" href="/">Amazon Devices</a></li>
+                                        <li><a target="_self" href="/">Amazon Science</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Make Money with Us</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Sell products on Amazon</a></li>
+                                        <li><a target="_self" href="/">Sell on Amazon Business</a></li>
+                                        <li><a target="_self" href="/">Sell apps on Amazon</a></li>
+                                        <li><a target="_self" href="/">Become an Affiliate</a></li>
+                                        <li><a target="_self" href="/">Advertise Your Products</a></li>
+                                        <li><a target="_self" href="/">Self-Publish with Us</a></li>
+                                        <li><a target="_self" href="/">Host an Amazon Hub</a></li>
+                                        <li><a target="_self" href="/">›See More Make Money with Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Amazon Payment Products</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/"> Amazon Business Card</a></li>
+                                        <li><a target="_self" href="/">Shop with Points</a></li>
+                                        <li><a target="_self" href="/">Reload Your Balance</a></li>
+                                        <li><a target="_self" href="/">Amazon Currency Converter</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-6/12 md:w-3/12">
+                        <div class="footer-meta">
+                            <div class="footer-meta__head">
+                                <h5>Let Us Help You</h5>
+                            </div>
+                            <div class="footer-meta__body">
+                                <nav class="links-vertical">
+                                    <ul>
+                                        <li><a target="_self" href="/">Amazon and COVID-19</a></li>
+                                        <li><a target="_self" href="/">Your Account</a></li>
+                                        <li><a target="_self" href="/">Your Orders</a></li>
+                                        <li><a target="_self" href="/">Shipping Rates & Policies</a></li>
+                                        <li><a target="_self" href="/">Returns & Replacements</a></li>
+                                        <li><a target="_self" href="/">Manage Your Content and Devices</a></li>
+                                        <li><a target="_self" href="/">Help</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container mx-auto max-w-[1000px]">
+                <div class="flex items-center justify-center gap-4 md:-gap-10 flex-wrap">
+                    <div class="footer-logo">
+                        <a href="#"><img src="assets/images/logo.svg" alt=""></a>
+                    </div>
+                    <ul class="footer-tools flex flex-wrap items-center justify-center gap-3">
+                        <li>
+                            <a href="#" class="btn btn--lang-update">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        width="18px" height="18px">
+                                        <path
+                                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn">
+                                <span class="currency-symbol">$</span>
+                                <span>USD - U.S. Dollar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn">
+                                <span class="flag-media">
+                                    <img src="assets/images/flags/us.png" alt="">
+                                </span>
+                                <span>United States</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const paymentRadios = document.querySelectorAll('input[name="payment"]');
+        const addCardForm = document.getElementById('add-card-form');
+        const addCardOption = document.querySelector('#add-card-option input[type="radio"]');
+
+        paymentRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (addCardOption.checked) {
+                    addCardForm.classList.remove('hidden');
+                } else {
+                    addCardForm.classList.add('hidden');
+                }
+            });
+        });
+
+        document.querySelector('#continue-button-section button').addEventListener('click', function () {
+            window.location.href = '#review-order';
+        });
+
+        document.querySelector('#order-summary-box button').addEventListener('click', function () {
+            window.location.href = '#review-order';
+        });
+    </script>
+
+</body>
+
+</html>
