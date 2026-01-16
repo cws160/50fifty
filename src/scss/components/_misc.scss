@@ -123,3 +123,26 @@
  ::-webkit-scrollbar-thumb:hover {
      background: #a8a8a8;
  }
+
+ ::-webkit-scrollbar {
+     display: none;
+ }
+
+
+ .amazon-btn-yellow {
+     background: #ffd814;
+     border: 1px solid #fcd200;
+     border-radius: 20px;
+     box-shadow: 0 2px 5px 0 rgba(213, 217, 217, .5);
+ }
+
+ .amazon-btn-orange {
+     background: #ffa41c;
+     border: 1px solid #ff8f00;
+     border-radius: 20px;
+     box-shadow: 0 2px 5px 0 rgba(213, 217, 217, .5);
+ }
+
+ .border-amazon {
+     border: 1px solid #d5d9d9;
+ }
